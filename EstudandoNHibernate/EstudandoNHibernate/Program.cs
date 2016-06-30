@@ -1,5 +1,6 @@
 ﻿using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,11 @@ namespace EstudandoNHibernate
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Configuration configuracao = new Configuration();
-                configuracao.Configure();
-                configuracao.AddAssembly(Assembly.GetExecutingAssembly());
-                ISession sessao = configuracao.BuildSessionFactory().OpenSession();
-                if (sessao != null)
-                {
-                    Console.WriteLine("A conexão funcionou");
-                    sessao.Close();
-                }
-                else Console.WriteLine("A conexão falhou");
-            }
-            catch
-            {
-                Console.WriteLine("A conexão falhou");
-            }
-            Console.Read();
+            
+            Configuration configuracao = new Configuration();
+
+            new SchemaExport(configuracao).Create(true, true);
+    
         }
     }
 }
