@@ -10,7 +10,7 @@ namespace EstudandoNHibernate.Infra
 {
     public class NHibernateHelper
     {
-        private Configuration configuracao()
+        public Configuration configuracao()
         {
             Configuration cfg  = new Configuration();
             cfg.Configure();
