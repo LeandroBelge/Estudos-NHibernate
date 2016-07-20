@@ -6,7 +6,7 @@
     <property name="connection.isolation">ReadCommitted</property>
     <property name="connection.connection_string">
       Server=localhost;
-      Database=D:\Dados Facture-e\BD TESTE.fdb; 
+      Database=D:\Projetos\Estudos NHibernate\DB.fdb; 
       User=SYSDBA;Password=masterkey
     </property>
     <property name="show_sql">true</property>

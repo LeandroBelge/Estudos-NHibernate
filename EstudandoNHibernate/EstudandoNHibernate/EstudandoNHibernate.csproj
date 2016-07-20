@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domains\Categoria.cs" />
     <Compile Include="Domains\Pessoa.cs" />
     <Compile Include="Infra\NHibernateHelper.cs" />
     <Compile Include="Program.cs" />
@@ -67,6 +68,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="Mapeamentos\Categoria.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mapeamentos\Pessoa.hbm.xml" />
   </ItemGroup>
   <ItemGroup />
