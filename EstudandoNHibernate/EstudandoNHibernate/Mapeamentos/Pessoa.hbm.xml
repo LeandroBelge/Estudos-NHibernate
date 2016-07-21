@@ -3,6 +3,7 @@
                    assembly="EstudandoNHibernate"
                    namespace="EstudandoNHibernate.Domains">
   <class name="Pessoa">
+    <cache usage="read-only" />
     <id name="Id">
       <generator class="identity"></generator>
     </id>

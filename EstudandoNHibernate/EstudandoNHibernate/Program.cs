@@ -17,23 +17,20 @@ namespace EstudandoNHibernate
     {
         static void Main(string[] args)
         {
-            ISession conexao = getConexao();
+            ISession conexao1 = getConexao();
+            ISession conexao2 = getConexao();
             try
             {
-                string hql = "from Pessoa where nome like('%L%') order by Nome";
-                IQuery query = conexao.CreateQuery(hql);
-                IList<Pessoa> pessoas = query.List<Pessoa>();
-                string Nomes = String.Empty;
-                foreach (var item in pessoas)
-                {
-                    Nomes += item.Nome + "\n";
-                }
-                Console.WriteLine(Nomes);
+                Pessoa pessoa1 = conexao1.Get<Pessoa>(9);
+                Pessoa pessoa2 = conexao2.Get<Pessoa>(9);
+
+                
                 Console.ReadLine();
             }
             finally
             {
-                conexao.Close();
+                conexao1.Close();
+                conexao2.Close();
             }   
         }
 
