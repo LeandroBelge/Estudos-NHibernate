@@ -20,17 +20,14 @@ namespace EstudandoNHibernate
             ISession conexao = getConexao();
             try
             {
-                ICriteria criteria = conexao.CreateCriteria<Pessoa>();
-                criteria.Add(Restrictions.Eq("Categoria.Id", 1));
-                criteria.Add(Restrictions.Le("Id", 9));
-                IList<Pessoa> pessoas = criteria.List<Pessoa>();
-
+                string hql = "from Pessoa where nome like('%L%') order by Nome";
+                IQuery query = conexao.CreateQuery(hql);
+                IList<Pessoa> pessoas = query.List<Pessoa>();
                 string Nomes = String.Empty;
                 foreach (var item in pessoas)
                 {
                     Nomes += item.Nome + "\n";
                 }
-
                 Console.WriteLine(Nomes);
                 Console.ReadLine();
             }
