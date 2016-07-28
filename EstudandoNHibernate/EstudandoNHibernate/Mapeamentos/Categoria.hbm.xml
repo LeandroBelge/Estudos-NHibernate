@@ -3,12 +3,14 @@
                    assembly="EstudandoNHibernate"
                    namespace="EstudandoNHibernate.Domains">
   <class name="Categoria">
+    <cache usage="nonstrict-read-write"/>
     <id name="Id">
       <generator class="identity"></generator>
     </id>
     <property name="Descricao"/>
     
     <set name="Pessoas" inverse="true">
+      <cache usage="nonstrict-read-write"/>
       <key column="CategoriaId" />     
       <one-to-many class="Pessoa"></one-to-many>
     </set>

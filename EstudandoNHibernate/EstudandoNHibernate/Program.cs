@@ -24,7 +24,6 @@ namespace EstudandoNHibernate
                 Pessoa pessoa1 = conexao1.Get<Pessoa>(9);
                 Pessoa pessoa2 = conexao2.Get<Pessoa>(9);
 
-                
                 Console.ReadLine();
             }
             finally
