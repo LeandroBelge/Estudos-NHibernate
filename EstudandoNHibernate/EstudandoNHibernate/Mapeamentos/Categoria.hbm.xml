@@ -4,15 +4,15 @@
                    namespace="EstudandoNHibernate.Domains">
   <class name="Categoria">
     <cache usage="nonstrict-read-write"/>
-    <id name="Id">
+    <id name="Id" column="CategoriaId">
       <generator class="identity"></generator>
     </id>
     <property name="Descricao"/>
     
-    <set name="Pessoas" inverse="true">
+    <set name="Pessoas" table="PessoasCategorias" inverse="true">
       <cache usage="nonstrict-read-write"/>
-      <key column="CategoriaId" />     
-      <one-to-many class="Pessoa"></one-to-many>
+      <key column="CategoriaId"  /> 
+      <many-to-many class="Pessoa" column="pessoaId"></many-to-many>
     </set>
   </class>
 </hibernate-mapping>

@@ -10,6 +10,6 @@ namespace EstudandoNHibernate.Domains
     {
         public virtual int Id { get; set; }
         public virtual string Nome { get; set; }
-        public virtual Categoria Categoria { get; set; }
+        public virtual ISet<Categoria> Categorias { get; set; }
     }
 }
